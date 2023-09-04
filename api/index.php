@@ -5,7 +5,7 @@
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Calculador IMC</title>
-  <link href="./index.css" rel="stylesheet">
+  <link href="../index.css" rel="stylesheet">
   </link>
 </head>
 
