@@ -1,17 +1,6 @@
 <?php
 function get_rating_by_imc($imc)
 {
-  if (empty($_POST['height'])) {
-    echo '<div class="error-message">Por favor insira sua altura!</div>';
-    return;
-  }
-  
-  if (empty($_POST['weight'])) {
-    echo '<div class="error-message">Por favor insira seu peso!</div>';
-    return;
-  }
-
-
   $faixas_de_peso = [
     "18.5" => "magreza",
     "24.9" => "saudável",
@@ -33,8 +22,19 @@ function get_rating_by_imc($imc)
 }
 
 if (isset($_POST['height']) && isset($_POST['weight'])) {
-  $height = $_POST['height'];
-  $weight = $_POST['weight'];
+  $height = (int) $_POST['height'];
+  $weight = (int) $_POST['weight'];
+
+  if (empty($_POST['height'])) {
+    echo '<div class="error-message">Por favor insira sua altura!</div>';
+    return;
+  }
+  
+  if (empty($_POST['weight'])) {
+    echo '<div class="error-message">Por favor insira seu peso!</div>';
+    return;
+  }
+
 
   $imc = $weight / ($height * 2);
   get_rating_by_imc($imc);
